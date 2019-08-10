@@ -6,9 +6,9 @@ namespace RESTClient.Requests
     [Serializable]
     public class RegisterRequest : BaseRequestResponse
     {
-        public string fullName { get; set; }
-        public string nickname { get; set; }
-        public string email { get; set; }
+        public string fullName;
+        public string nickname;
+        public string email;
         public string password;
     }
 }
