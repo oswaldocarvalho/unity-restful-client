@@ -65,7 +65,7 @@ public class GamePanel : Form
 	{
 		try
 		{
-			await Global.RestClient.Get<BaseRequestResponse>("/account/sign-out");
+			await Global.RestClient.Delete<BaseRequestResponse>("/account/sign-out");
 			gameObject.SetActive(false);
 			SignInPanel.SetActive(true);
 		}
@@ -85,7 +85,7 @@ public class GamePanel : Form
 	{
 		try
 		{
-			await Global.RestClient.Patch<BaseRequestResponse>("/ranking", new RankingRequest() { Score = score });
+			await Global.RestClient.Patch<BaseRequestResponse>("/ranking", new RankingRequest() { score = score });
 		}
 		catch(ResponseException e)
 		{
@@ -110,12 +110,12 @@ public class GamePanel : Form
 
 		foreach (var item in response.ranking)
 		{
-			if (item.Nickname == Global.Me.Nickname)
+			if (item.nickname == Global.Me.nickname)
 			{
 				LeaderBoardText.text += " Me ".PadLeft(22, '~').PadRight(39, '~') + "\n";
 			}
 			
-			AddRecord(item.Rank, item.Nickname, item.Score);
+			AddRecord(item.rank, item.nickname, item.score);
 		}
 	}
 }

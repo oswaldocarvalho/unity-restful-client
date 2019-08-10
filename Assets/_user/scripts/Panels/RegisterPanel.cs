@@ -56,10 +56,10 @@ namespace Account
 
             // try to save te new user
             RegisterRequest request = new RegisterRequest() {
-                FullName = _fullName.GetValue(),
-                Nickname = _nickname.GetValue(),
-                Email = _email.GetValue(),
-                Password = _password.GetValue(),
+                fullName = _fullName.GetValue(),
+                nickname = _nickname.GetValue(),
+                email = _email.GetValue(),
+                password = _password.GetValue(),
             };
 
             RegisterResponse response;

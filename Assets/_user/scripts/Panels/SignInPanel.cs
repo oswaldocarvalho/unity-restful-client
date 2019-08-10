@@ -38,9 +38,11 @@ namespace Account
 
             SignInRequest request = new SignInRequest()
             {
-                Email = _email.GetValue(),
-                Password = _password.GetValue()
+                email = _email.GetValue(),
+                password = _password.GetValue()
             };
+
+            Debug.Log(request.GetQueryString());
 
             SignInResponse response;
 
@@ -57,7 +59,7 @@ namespace Account
 
             ResetForm();
 
-            _title.SetMessage($"Wellcome {response.Nickname}!");
+            _title.SetMessage($"Wellcome {response.nickname}!");
 
             await Task.Delay(1000);
             

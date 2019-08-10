@@ -7,6 +7,6 @@ namespace RESTfull
     public class ResponseException : Exception
     {
         public ResponseException() : base() {}
-        public ResponseException(ErrorResponse errorResponse) : base(errorResponse.Message) {}
+        public ResponseException(ErrorResponse errorResponse) : base(errorResponse.message) {}
     }
 }
